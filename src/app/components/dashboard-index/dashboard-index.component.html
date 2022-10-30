@@ -1,0 +1,31 @@
+
+<div class="row">
+  <div class="column col-lg-3">
+    <div class="card" >
+      <div class="card-header"> <label class="card-title">PROSPECTO ENTRANTE</label> </div>
+      <app-card-prospecto [listaDatos] = this.listaProspectos></app-card-prospecto>
+        <label class=""></label>
+    </div>
+  </div>
+  <div class="column col-lg-3">
+    <div class="card" >
+      <div class="card-header"> <label class="card-title">CONTACTADOS</label> </div>
+      <app-card-contactado [listaDatos] = this.listaProspectos></app-card-contactado>
+        <label class=""></label>
+    </div>
+  </div>
+  <div class="column col-lg-3">
+    <div class="card" >
+      <div class="card-header"> <label class="card-title">CLIENTES</label> </div>
+      <app-card-cliente [listaDatos] = this.listaProspectos></app-card-cliente>
+        <label class=""></label>
+    </div>
+  </div>
+  <div class="column col-lg-3">
+    <div class="card" >
+      <div class="card-header"> <label class="card-title">CLIENTES RECURRENTES</label> </div>
+      <app-card-cliente-recurrente [listaDatos] = this.listaProspectos></app-card-cliente-recurrente>
+        <label class=""></label>
+    </div>
+  </div>
+</div>

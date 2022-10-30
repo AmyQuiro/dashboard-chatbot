@@ -1,0 +1,28 @@
+
+
+<div *ngFor="let item of this.listaDatos" class="card-body">
+
+  <div  class="card-person">
+    <div class="person-photo">
+      <img title="foto-perfil" class="person-photo-img" src="https://www.w3schools.com/html/img_girl.jpg" >
+    </div>
+    <div class="person-data">
+      <p class="lb-name">{{item.nombre}}</p>
+      <p class="lb-cellphone">{{item.celular}}</p>
+      <p class="lb-email">{{item.email}}</p>
+
+    </div>
+
+  </div>
+  <div class="last-connection">
+    <span class="lb-key">Última vez: &nbsp; </span>
+    <span class="lb-value">20/10/2022 15:34</span>
+  </div>
+
+  <div class="actions">
+    <button  type="button" class="btn btn-primary">Contactar</button>
+  </div>
+</div>
+
+
+
