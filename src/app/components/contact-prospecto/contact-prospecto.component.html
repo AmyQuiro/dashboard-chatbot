@@ -1,0 +1,27 @@
+<div class="container">
+  <h2 class="title">Contactar prospecto</h2>
+  <div  class="card-person">
+     <div class="person-photo">
+        <img title="foto-perfil" class="person-photo-img" src={{client.fotoUrl}} >
+     </div>
+     <div class="person-data">
+        <p class="lb-name">{{client.nombre}}</p>
+        <p class="lb-cellphone">{{client.celular}}</p>
+        <p class="lb-email">{{client.email}}</p>
+     </div>
+  </div>
+  <div>
+     <label>Contactar por: </label>
+     <select class="form-select" aria-label=".form-select-lg example">
+        <option selected>Seleccione un medio de contacto</option>
+        <option value="1">Whatsapp</option>
+        <option value="2">Messenger</option>
+        <option value="3">Teléfono</option>
+        <option value="3">Correo</option>
+     </select>
+  </div>
+  <div class="actions">
+    <button  type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+    <button  type="button" class="btn btn-primary" (click)="guardar()">Guardar</button>
+  </div>
+</div>

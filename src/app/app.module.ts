@@ -12,8 +12,10 @@ import { CardProspectoComponent } from './components/card-prospecto/card-prospec
 import { CardContactadoComponent } from './components/card-contactado/card-contactado.component';
 import { CardClienteComponent } from './components/card-cliente/card-cliente.component';
 import { CardClienteRecurrenteComponent } from './components/card-cliente-recurrente/card-cliente-recurrente.component';
+import { ClientDetailsComponent } from './components/client-details/client-details.component';
+import { ContactProspectoComponent } from './components/contact-prospecto/contact-prospecto.component';
 @NgModule({
-  declarations: [AppComponent, DashboardIndexComponent, CardProspectoComponent, CardContactadoComponent, CardClienteComponent, CardClienteRecurrenteComponent],
+  declarations: [AppComponent, DashboardIndexComponent, CardProspectoComponent, CardContactadoComponent, CardClienteComponent, CardClienteRecurrenteComponent, ClientDetailsComponent, ContactProspectoComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule],
   providers: [],
   bootstrap: [AppComponent],

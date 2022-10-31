@@ -4,7 +4,7 @@
 
   <div  class="card-person">
     <div class="person-photo">
-      <img title="foto-perfil" class="person-photo-img" src="https://www.w3schools.com/html/img_girl.jpg" >
+      <img title="foto-perfil" class="person-photo-img" src={{item.fotoUrl}} >
     </div>
     <div class="person-data">
       <p class="lb-name">{{item.nombre}}</p>
@@ -20,7 +20,7 @@
   </div>
 
   <div class="actions">
-    <button  type="button" class="btn btn-primary">Contactar</button>
+    <button  type="button" class="btn btn-primary" (click)="contactar(item.id)">Contactar</button>
   </div>
 </div>
 

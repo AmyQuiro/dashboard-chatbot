@@ -4,4 +4,5 @@ export class Client {
   email: string = '';
   facebookId: string = '';
   fotoUrl: string = '';
+  id: string = '';
 }

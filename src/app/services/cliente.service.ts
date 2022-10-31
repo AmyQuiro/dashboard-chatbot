@@ -6,22 +6,28 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
   providedIn: 'root',
 })
 export class ClienteService {
+  obtenerClient(id: number): Client {
+    return this.obtenerLista().filter((x) => x.id == id.toString())[0];
+  }
   constructor() {}
 
-  obtenerLista() {
+  obtenerLista(): Array<Client> {
     let client1 = new Client();
     client1.email = 'amy_quiroga_quisbert@gmail.com';
     client1.facebookId = '1231231';
     client1.fotoUrl = 'https://www.w3schools.com/html/img_girl.jpg';
     client1.nombre = 'Amy Quiroga Quisbert';
     client1.celular = '77874723';
+    client1.id = '1';
 
     let client2 = new Client();
     client2.email = 'juan_perez@gmail.com';
     client2.facebookId = '978302';
-    client2.fotoUrl = 'https://www.w3schools.com/html/img_girl.jpg';
+    client2.fotoUrl =
+      'https://wl-genial.cf.tsp.li/resize/728x/jpg/f6e/ef6/b5b68253409b796f61f6ecd1f1.jpg';
     client2.nombre = 'Juan Perez';
     client2.celular = '79293662';
+    client2.id = '2';
 
     let listClient: Client[] = [];
     listClient.push(client1);
