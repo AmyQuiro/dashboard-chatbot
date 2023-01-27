@@ -41,12 +41,12 @@ export class ContactProspectoComponent implements OnInit {
 
   guardar() {
     this.clientService.post('enviarcorreo', { correo : this.client.email , mensaje : this.mensaje }).then(data=>{
-      console.log('====================================');
-      console.log(data);
-      console.log('====================================');
-     
     })
-    this.router.navigate(['/dashboard-index']);
+
+    this.clientService.post('api/updateClientStatus' , { id : this.client.id , status : 2}).then(data=>{
+       this.router.navigate(['/dashboard-index']);
+    })
+    
   }
   cancelar() {
     this.router.navigate(['/dashboard-index']);
