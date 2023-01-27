@@ -10,12 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class ComprasComponent implements OnInit {
   id: String;
   listaDatos : any[] = [];
+  load : boolean = false;
   constructor(private clientService: ClienteService,private activeteRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.id = this.activeteRoute.snapshot.params['id'];
-    this.clientService.get('api/compra',{ client_id : '63d2b1b6e161020016e46d9d'}).then((datos : any[])=>{
+    this.clientService.get('api/compra',{ client_id : this.id}).then((datos : any[])=>{
       this.listaDatos = datos;
+      this.load = true;
     })
   }
 

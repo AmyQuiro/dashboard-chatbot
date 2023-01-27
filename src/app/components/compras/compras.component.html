@@ -1,11 +1,40 @@
-<nav class="navbar navbar-light bg-light">
+<!--<nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
       <span class="navbar-brand mb-0 h1">Compras</span>
     </div>
   </nav>
-   <ul class="list-group list-group-light" *ngFor="let item of listaDatos" >
+   <ul class="list-group list-group-light"  >
     <li class="list-group-item">{{item.date}}  <p>{{item.total}}</p> </li>
        <div *ngFor="let detalle of item.detalle" >
            <li class="list-group-item">{{detalle.product}} </li>
        </div>
-  </ul>
+  </ul> 
+-->
+<nav class="navbar navbar-light bg-primary">
+  <div class="container-fluid">
+    <span class="navbar-brand mb-0 h1">Compras</span>
+  </div>
+</nav>
+  <div class="list-group" *ngIf="listaDatos.length >0 && load"  >
+    <a *ngFor="let item of listaDatos" class="list-group-item list-group-item-action flex-column align-items-start">
+      <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1">Compra Nro : {{item._id}}</h5>
+      </div>
+      <small>Fecha : {{item.date}} </small>
+      <br><br>
+      <h6 class="mb-1">Detalle</h6>
+        <div *ngFor="let detalle of item.detalle" >
+          <li class="list-group-item d-flex w-100 justify-content-between">{{detalle.product}} 
+            <small> {{detalle.price}}  x  {{detalle.quantity}} =  {{detalle.price * detalle.quantity}} Bs</small>
+          </li>
+       </div>
+       <div class="d-flex w-100 justify-content-between">
+        <h5 class="mb-1"></h5>
+        <small>Total : {{item.total}} BS</small>
+      </div>
+    </a>
+  </div>
+
+  <div *ngIf="listaDatos.length == 0 && load" >
+    NO EXISTE DATOS
+  </div>
