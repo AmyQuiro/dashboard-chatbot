@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="load" >
   <h2 class="title">Contactar prospecto</h2>
   <div  class="card-person">
      <div class="person-photo">
@@ -13,13 +13,13 @@
   <div>
      <label>Contactar por: </label>
      <select class="form-select" aria-label=".form-select-lg example">
-        <option selected>Seleccione un medio de contacto</option>
-        <option value="1">Whatsapp</option>
-        <option value="2">Messenger</option>
-        <option value="3">Teléfono</option>
-        <option value="3">Correo</option>
+       <!-- <option selected>Seleccione un medio de contacto</option>-->
+        <option value="3">{{client.email}}</option>
      </select>
   </div>
+
+   <textarea class="form-control" cols="34" rows="10"  [value]="mensaje" (input)="onValueChange($event)" placeholder="mensaje"></textarea>
+
   <div class="actions">
     <button  type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
     <button  type="button" class="btn btn-primary" (click)="guardar()">Guardar</button>

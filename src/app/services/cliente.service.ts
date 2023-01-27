@@ -9,7 +9,7 @@ export class ClienteService {
   obtenerClient(id: number): Client {
     return this.obtenerLista().filter((x) => x.id == id.toString())[0];
   }
-  constructor() {}
+  constructor(private http : HttpClient) {}
 
   obtenerLista(): Array<Client> {
     let client1 = new Client();
@@ -60,4 +60,36 @@ export class ClienteService {
     //     })
     //   );
   }
+
+  get(nombreServicio , datos){
+    return new Promise((res ,error)=>{
+      datos = Object.entries(datos).map(e => e.join('=')).join('&');
+      this.http.get('http://localhost:5000/'.concat(nombreServicio).concat('?').concat(datos)).subscribe({
+        next : (respuesta : any)=>{
+          res(respuesta)
+        },error : (err)=>{
+          console.log('====================================');
+          console.log(err);
+          console.log('====================================');
+        }
+      })
+    });
+  }
+
+  
+  post(nombreServicio , datos){
+   
+    return new Promise((res ,error)=>{
+      
+      this.http.post('http://localhost:5000/'.concat(nombreServicio), datos).subscribe({
+        next : (respuesta : any)=>{
+          res(respuesta)
+        },
+        error : (err)=>{
+          //this.presentAlert('Error de conexión')
+        }
+      })
+    });
+  }
+
 }

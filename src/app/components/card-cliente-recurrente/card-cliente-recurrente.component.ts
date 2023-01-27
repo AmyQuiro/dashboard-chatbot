@@ -11,6 +11,6 @@ export class CardClienteRecurrenteComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    console.log('listaDatos :>> ', this.listaDatos);
+    //console.log('listaDatos :>> ', this.listaDatos);
   }
 }

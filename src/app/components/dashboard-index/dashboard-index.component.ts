@@ -12,11 +12,64 @@ export class DashboardIndexComponent implements OnInit {
   public listaContactados: Array<Client> = new Array<Client>();
   public listaClientes: Array<Client> = new Array<Client>();
   public listaRecurrentes: Array<Client> = new Array<Client>();
+  public load : boolean = false;
 
   constructor(private clientService: ClienteService) {}
 
+  
+
   ngOnInit(): void {
-    this.obtenerListado();
+    //this.obtenerListado();
+    this.clientService.get('api/client', {}).then((datos : any[])=>{
+      this.listaProspectos  = datos.map(a => {
+        let c = new Client();
+          c.email = a.email;
+          c.facebookId =a.facebookId;
+          c.fotoUrl = a.profilePic;
+          c.nombre = a.firstName + ' ' + a.lastName;
+          c.celular = a.phone;
+          c.id = a._id;
+          c.estado = a.status
+          return c;
+       }).filter(v => v.estado == 1)
+
+       this.listaContactados  = datos.map(a => {
+        let c = new Client();
+          c.email = a.email;
+          c.facebookId =a.facebookId;
+          c.fotoUrl = a.profilePic;
+          c.nombre = a.firstName + ' ' + a.lastName;
+          c.celular = a.phone;
+          c.id = a._id;
+          c.estado = a.status
+          return c;
+       }).filter(v => v.estado == 2)
+
+       this.listaClientes  = datos.map(a => {
+        let c = new Client();
+          c.email = a.email;
+          c.facebookId =a.facebookId;
+          c.fotoUrl = a.profilePic;
+          c.nombre = a.firstName + ' ' + a.lastName;
+          c.celular = a.phone;
+          c.id = a._id;
+          c.estado = a.status
+          return c;
+       }).filter(v => v.estado == 3)
+
+       this.listaRecurrentes  = datos.map(a => {
+        let c = new Client();
+          c.email = a.email;
+          c.facebookId =a.facebookId;
+          c.fotoUrl = a.profilePic;
+          c.nombre = a.firstName + ' ' + a.lastName;
+          c.celular = a.phone;
+          c.id = a._id;
+          c.estado = a.status
+          return c;
+       }).filter(v => v.estado == 4)
+       this.load = true;
+    })
   }
   obtenerListado() {
     this.listaProspectos = this.clientService.obtenerLista();

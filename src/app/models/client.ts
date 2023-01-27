@@ -5,4 +5,5 @@ export class Client {
   facebookId: string = '';
   fotoUrl: string = '';
   id: string = '';
+  estado  : number = 0;
 }
