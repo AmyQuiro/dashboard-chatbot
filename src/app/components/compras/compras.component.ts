@@ -1,3 +1,5 @@
+import { ActivatedRoute } from '@angular/router';
+import { ClienteService } from 'src/app/services/cliente.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./compras.component.css']
 })
 export class ComprasComponent implements OnInit {
-
-  constructor() { }
+  id: String;
+  listaDatos : any[] = [];
+  constructor(private clientService: ClienteService,private activeteRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.id = this.activeteRoute.snapshot.params['id'];
+    this.clientService.get('api/compra',{ client_id : '63d2b1b6e161020016e46d9d'}).then((datos : any[])=>{
+      this.listaDatos = datos;
+    })
   }
 
 }
