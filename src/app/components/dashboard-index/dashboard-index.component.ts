@@ -13,7 +13,7 @@ export class DashboardIndexComponent implements OnInit {
   public listaClientes: Array<Client> = new Array<Client>();
   public listaRecurrentes: Array<Client> = new Array<Client>();
   public load : boolean = false;
-
+  public home : boolean = true ;
   constructor(private clientService: ClienteService) {}
 
   
@@ -73,5 +73,9 @@ export class DashboardIndexComponent implements OnInit {
   }
   obtenerListado() {
     this.listaProspectos = this.clientService.obtenerLista();
+  }
+
+  menu(dato){
+    this.home = dato;
   }
 }
