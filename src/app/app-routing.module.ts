@@ -2,10 +2,12 @@ import { ContactProspectoComponent } from './components/contact-prospecto/contac
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DashboardIndexComponent } from './components/dashboard-index/dashboard-index.component';
+import { ComprasComponent } from './components/compras/compras.component';
 
 const routes: Routes = [
   { path: 'dashboard-index', component: DashboardIndexComponent },
   { path: 'contact-prospecto/:id', component: ContactProspectoComponent },
+  { path: 'compras/:id', component: ComprasComponent },
   { path: '', redirectTo: '/dashboard-index', pathMatch: 'full' },
   { path: '**', redirectTo: '/dashboard-index', pathMatch: 'full' },
 ];

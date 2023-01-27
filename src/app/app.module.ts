@@ -16,8 +16,9 @@ import { ClientDetailsComponent } from './components/client-details/client-detai
 import { ContactProspectoComponent } from './components/contact-prospecto/contact-prospecto.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ComprasComponent } from './components/compras/compras.component';
 @NgModule({
-  declarations: [AppComponent, DashboardIndexComponent, CardProspectoComponent, CardContactadoComponent, CardClienteComponent, CardClienteRecurrenteComponent, ClientDetailsComponent, ContactProspectoComponent],
+  declarations: [AppComponent, DashboardIndexComponent, CardProspectoComponent, CardContactadoComponent, CardClienteComponent, CardClienteRecurrenteComponent, ClientDetailsComponent, ContactProspectoComponent, ComprasComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule,HttpClientModule,FormsModule],
   providers: [],
   bootstrap: [AppComponent],
