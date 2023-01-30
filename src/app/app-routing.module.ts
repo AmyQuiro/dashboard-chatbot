@@ -4,12 +4,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardIndexComponent } from './components/dashboard-index/dashboard-index.component';
 import { ComprasComponent } from './components/compras/compras.component';
 import { LoginComponent } from './components/login/login.component';
+import { PromocionComponent } from './components/promocion/promocion.component';
 
 const routes: Routes = [
   { path: 'dashboard-index', component: DashboardIndexComponent },
   { path: 'contact-prospecto/:id', component: ContactProspectoComponent },
   { path: 'compras/:id', component: ComprasComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'promocion', component: PromocionComponent },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   //{ path: '**', redirectTo: '/dashboard-index', pathMatch: 'full' },
 ];

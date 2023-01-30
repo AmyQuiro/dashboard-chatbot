@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Client } from './../../models/client';
 import { ClienteService } from './../../services/cliente.service';
 import { Component, OnInit } from '@angular/core';
@@ -14,12 +15,11 @@ export class DashboardIndexComponent implements OnInit {
   public listaRecurrentes: Array<Client> = new Array<Client>();
   public load : boolean = false;
   public home : boolean = true ;
-  constructor(private clientService: ClienteService) {}
+  constructor(private clientService: ClienteService, private router : Router) {}
 
   
 
   ngOnInit(): void {
-    //this.obtenerListado();
     this.clientService.get('api/client', {}).then((datos : any[])=>{
       this.listaProspectos  = datos.map(a => {
         let c = new Client();
@@ -71,11 +71,13 @@ export class DashboardIndexComponent implements OnInit {
        this.load = true;
     })
   }
-  obtenerListado() {
-    this.listaProspectos = this.clientService.obtenerLista();
-  }
+
 
   menu(dato){
     this.home = dato;
+  }
+
+  irAPromocion(){
+    this.router.navigate(['/promocion']);
   }
 }

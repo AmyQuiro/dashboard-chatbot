@@ -1,0 +1,26 @@
+<h1></h1>
+
+<div class="container" style="max-width: 500px;" >
+    <h2 class="title">Nueva Promoción</h2>
+ <div>   <label>Nombre</label></div>
+    <input type="text" [value]=""  class="form-control" (input)="onNameChange($event)" >
+    <div>
+        <label>Grupo </label>
+       <select class="form-select" aria-label=".form-select-lg example">
+       <option selected>Seleccione un grupo</option>
+           <option value="1">Prospecto</option>
+           <option value="2">Contactado</option>
+           <option value="3">Cliente</option>
+           <option value="4">Cliente recurrente</option>
+       </select>
+    </div>
+  <br>
+  <label>Mensaje </label>
+     <textarea class="form-control" cols="34" rows="10"  [value]="" (input)="onMessageChange($event)" placeholder="mensaje"></textarea>
+     <br>
+    <div class="actions">
+      <button  type="button" class="btn btn-secondary" (click)="cancelar()">Cancelar</button>
+      <button  type="button" class="btn btn-primary" (click)="enviar()" style="margin-left: 20px;">Enviar</button>
+    </div>
+  </div>
+  

@@ -21,7 +21,7 @@ export class ContactProspectoComponent implements OnInit {
 
   ngOnInit(): void {
     this.id = this.activeteRoute.snapshot.params['id'];
-    //this.client = this.clientService.obtenerClient(this.id);
+
   
     this.clientService.get('api/client', {}).then((datos : any[])=>{
       this.client = datos.map(a => {
@@ -43,8 +43,9 @@ export class ContactProspectoComponent implements OnInit {
     this.clientService.post('enviarcorreo', { correo : this.client.email , mensaje : this.mensaje }).then(data=>{
     })
 
-    this.clientService.post('api/updateClientStatus' , { id : this.client.id , status : 2}).then(data=>{
-       this.router.navigate(['/dashboard-index']);
+    this.clientService.post('api/client/updateClientStatus' , { id : this.client.id , status : 2}).then(data=>{
+      console.log(data) 
+      this.router.navigate(['/dashboard-index']);
     })
     
   }

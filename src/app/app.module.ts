@@ -18,8 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ComprasComponent } from './components/compras/compras.component';
 import { LoginComponent } from './components/login/login.component';
+import { PromocionComponent } from './components/promocion/promocion.component';
 @NgModule({
-  declarations: [AppComponent, DashboardIndexComponent, CardProspectoComponent, CardContactadoComponent, CardClienteComponent, CardClienteRecurrenteComponent, ClientDetailsComponent, ContactProspectoComponent, ComprasComponent, LoginComponent],
+  declarations: [AppComponent, DashboardIndexComponent, CardProspectoComponent, CardContactadoComponent, CardClienteComponent, CardClienteRecurrenteComponent, ClientDetailsComponent, ContactProspectoComponent, ComprasComponent, LoginComponent, PromocionComponent],
   imports: [BrowserModule, AppRoutingModule, NgbModule,HttpClientModule,FormsModule,ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
